@@ -7,3 +7,4 @@ __pycache__/
 .env
 db.sqlite3
 2.Backend/webdb11_backup.sql*
+2.Backend/certs/
