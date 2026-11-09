@@ -25,7 +25,21 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await axios.post(`${API_BASE_URL}/api/register/`, form);
+    try {
+  const res = await axios.post(`${API_BASE_URL}/api/register/`, form);
+
+  if (res.data.error) {
+    setMsgType("error");
+    setMessage(res.data.error);
+  } else {
+    setMsgType("success");
+    setMessage(res.data.success);
+  }
+} catch (error) {
+  console.log("Registration error:", error);
+  setMsgType("error");
+  setMessage(error.response?.data?.error || error.message);
+}
 
     if (res.data.error) {
       setMsgType("error");
