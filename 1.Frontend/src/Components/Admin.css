@@ -181,3 +181,128 @@
   width: 150px;
   align-self: center;
 }
+
+
+/* Mobile responsive Admin Dashboard */
+@media screen and (max-width: 600px) {
+
+  .adminPage-layout {
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+
+  .adminPage-sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    padding: 8px;
+    box-sizing: border-box;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-right: none;
+    border-bottom: 3px solid #0679a1;
+  }
+
+  .adminPage-sidebar button {
+    padding: 10px;
+    margin: 4px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .adminPage-content {
+    width: 100%;
+    margin: 0;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    overflow-x: auto;
+  }
+
+  .adminPage-content h2 {
+    font-size: 22px;
+  }
+
+  .adminPage-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .adminPage-card {
+    padding: 18px;
+  }
+
+  .adminPage-card h3 {
+    font-size: 18px;
+  }
+
+  .adminPage-card p {
+    font-size: 25px;
+  }
+
+  .adminPage-table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 15px auto 30px;
+  }
+
+  .adminPage-table th,
+  .adminPage-table td {
+    padding: 9px;
+    font-size: 13px;
+  }
+
+  .adminPage-formBox {
+    padding: 15px;
+  }
+
+  .adminPage-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .adminPage-form input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .adminPage-form button {
+    width: 100%;
+  }
+
+  .assignment-form {
+    width: 100%;
+    margin: 15px auto;
+    box-sizing: border-box;
+    gap: 15px;
+  }
+
+  .assignment-form .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .assignment-form input,
+  .assignment-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  .upload-btn {
+    width: 100%;
+  }
+
+  .warning-box,
+  .no-warning {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
