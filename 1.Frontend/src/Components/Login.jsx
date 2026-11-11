@@ -1,6 +1,7 @@
+
 import "./Login.css";
 import axios from "axios";
-import { useState} from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_BASE_URL } from "../config";
 
@@ -17,10 +18,8 @@ const Login = () => {
     e.preventDefault();
 
     try {
-
-
       const res = await axios.post(
-        "`${API_BASE_URL}/api/login/",
+        `${API_BASE_URL}/api/login/`,
         data
       );
 
@@ -48,6 +47,7 @@ const Login = () => {
       setMessage("Invalid Credentials");
 
     } catch (err) {
+      console.error("Login error:", err.response?.data || err.message);
       setMsgType("error");
       setMessage("Invalid username or password");
     }
@@ -57,18 +57,19 @@ const Login = () => {
     <>
       <main>
         <h2 id="log-h2">Login</h2>
+
         <div className="error-msg">
           {message && (
-            <p className={`msg ${msgType}`} style={{textAlign:"center"}}>
+            <p className={`msg ${msgType}`} style={{ textAlign: "center" }}>
               {message}
             </p>
           )}
         </div>
-       
+
         <form onSubmit={handleSubmit}>
           <div className="row">
             <label>Full Name:</label>
-            <input 
+            <input
               type="text"
               name="username"
               placeholder="Enter full name"
@@ -82,7 +83,7 @@ const Login = () => {
 
           <div className="row">
             <label>Password:</label>
-            <input 
+            <input
               type="password"
               name="password"
               placeholder="Enter password"
